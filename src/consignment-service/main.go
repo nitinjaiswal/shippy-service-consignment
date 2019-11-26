@@ -6,7 +6,7 @@ import (
 	"net"
 	"sync"
 
-	pb "github.com/EwanValentine/shippy-service-consignment/proto/consignment"
+	pb "github.com/nitinjaiswal/shippy-service-consignment/proto/consignment"
 	"google.golang.org/grpc"
 )
 
@@ -85,9 +85,9 @@ func main() {
 	// implementation into the auto-generated interface code for our
 	// protobuf definition.
 	pb.RegisterShippingServiceServer(s, &service{repo})
-
+	// log.Println(pb.ShippingServiceClient(1))
 	log.Println("Running on port:", port)
-	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
-	}
+	// if err := s.Serve(lis); err != nil {
+	// 	log.Fatalf("failed to serve: %v", err)
+	// }
 }
